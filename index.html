@@ -1,0 +1,87 @@
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Experiment No: 08</p>
+<p>&nbsp;</p>
+<p>Experiment Name: Thread programming&nbsp; in linux.</p>
+<p>&nbsp;</p>
+<p>Objectives: According to this report we will focus on how a thread is created and identified. We will also present a working C program example that will explain how to do basic threaded programming.</p>
+<p>&nbsp;</p>
+<p>Source Code:</p>
+<p>&nbsp;</p>
+<p>#include&lt;stdio.h&gt;</p>
+<p>#include&lt;string.h&gt;</p>
+<p>#include&lt;pthread.h&gt;</p>
+<p>#include&lt;stdlib.h&gt;</p>
+<p>#include&lt;unistd.h&gt;</p>
+<p>&nbsp;</p>
+<p>pthread_t tid[2];</p>
+<p>&nbsp;</p>
+<p>void* doSomeThing(void *arg)</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp; unsigned long i = 0;</p>
+<p>&nbsp;&nbsp;&nbsp; pthread_t id = pthread_self();</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp; if(pthread_equal(id,tid[0]))</p>
+<p>&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("\n First thread processing\n");</p>
+<p>&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp;&nbsp; else</p>
+<p>&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("\n Second thread processing\n");</p>
+<p>&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp; for(i=0; i&lt;(0xFFFFFFFF);i++);</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp; return NULL;</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>int main(void)</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp; int i = 0;</p>
+<p>&nbsp;&nbsp;&nbsp; int err;</p>
+<p>while(i &lt; 2)</p>
+<p>&nbsp;&nbsp;&nbsp; {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err = pthread_create(&amp;(tid[i]), NULL, &amp;doSomeThing, NULL);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (err != 0)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("\ncan't create thread :[%s]", strerror(err));</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("\n Thread created successfully\n");</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i++;</p>
+<p>&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp; sleep(5);</p>
+<p>&nbsp;&nbsp;&nbsp; return 0;</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>Output :</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>Discussion: In this lab experiment, we have learnt about thread programming in Linux using C language. We also learnt about creating a thread and working behavior of thread in c language .</p>
+<p>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
